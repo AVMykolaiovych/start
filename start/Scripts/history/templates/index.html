@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Django</title>
+</head>
+<body>
+	<h1> {{title}} </h1>
+	<p> 
+	{% for i in object_list %}
+		<h2> <a href="/{{i.id}}/" > {{i.title}} </a> </h2>
+		<p> {{i.content}} </p>
+		<p> {{i.tpublish}} </p>
+		<p> {{i.id}} </p>
+	{% endfor %}
+
+
+	 </p>
+</body>
+</html>

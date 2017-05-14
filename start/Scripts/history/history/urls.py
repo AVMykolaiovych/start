@@ -15,8 +15,29 @@ Including another URLconf
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url
+
+from django.conf.urls import include
+
 from django.contrib import admin
 
+# from post import views
+
+from post.views import (
+    posthome,
+    postcreate,
+    postdetail,
+    postlist,
+    postupdate,
+    postdelete,
+)
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^posts/$', posthome),
+    url(r'^create/$', postcreate),
+    # url(r'^detail/$', postdetail),
+    url(r'^detail/$', postdetail),
+    url(r'^update/$', postupdate),
+    url(r'^delete/$', postdelete),
+    url(r'^$', postlist),
 ]
